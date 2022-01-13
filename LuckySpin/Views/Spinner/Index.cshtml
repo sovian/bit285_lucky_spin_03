@@ -16,7 +16,7 @@
 <body>
     <button onclick='history.go(0)'>@textTransform.numberToText(@Model.Luck)</button>
     <div>@Model.A</div><div>@Model.B</div><div>@Model.C</div>
-    <h1> Lucky Number </h1>
+    <h1> Lucky @textTransform.numberToText(@Model.Luck) </h1>
     <img src="/Images/LuckySpinCoins.jpg" alt="Coins" style="display:@Model.Display" />
 </body>
 </html>
