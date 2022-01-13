@@ -1,7 +1,9 @@
 ﻿@model LuckySpin.Models.Spin
+@inject LuckySpin.Models.TextTransformService textTransform
 @{
     //TODO: Build out the Razor template below with the appropriate Model properties
     //TODO: Inject the TextTransform Service into the Razor template
+
 }
 
 <!DOCTYPE html>
@@ -12,9 +14,9 @@
     <link rel="stylesheet" href="/luckyStyles.css">
 </head>
 <body>
-    <button onclick='history.go(0)'>Spin</button>
-    <div>2</div><div>1</div><div>7</div>
+    <button onclick='history.go(0)'>@textTransform.numberToText(@Model.Luck)</button>
+    <div>@Model.A</div><div>@Model.B</div><div>@Model.C</div>
     <h1> Lucky Number </h1>
-    <img src="/Images/LuckySpinCoins.jpg" alt="Coins" style="display:none" />
+    <img src="/Images/LuckySpinCoins.jpg" alt="Coins" style="display:@Model.Display" />
 </body>
 </html>

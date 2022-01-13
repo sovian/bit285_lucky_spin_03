@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LuckySpin.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -16,8 +17,9 @@ namespace LuckySpin
         public void ConfigureServices(IServiceCollection services)
         {
             //TODO: enable the full MVC service
-            //services.AddMvc();
+            services.AddMvc();
             //TODO: (bonus) Register the TextTransformService class
+            services.AddScoped<TextTransformService>();
             
             
         }
@@ -36,7 +38,7 @@ namespace LuckySpin
             });
 
             //TODO: Enable requests for static files, like CSS and images
-            //app.UseStaticFiles();
+           app.UseStaticFiles();
         }
     }
 }
